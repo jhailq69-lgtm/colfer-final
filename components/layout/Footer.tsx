@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { mainNav } from "@/data/nav";
@@ -13,9 +14,13 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-colfer-dark text-colfer-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-12 sm:grid-cols-2 md:px-6 lg:grid-cols-4">
         <div>
-          <span className="font-display text-2xl font-bold tracking-wide">
-            COLFER
-          </span>
+          <Image
+            src="/images/colfer-logo.png"
+            alt="COLFER"
+            width={520}
+            height={82}
+            className="h-9 w-auto"
+          />
           <p className="mt-3 max-w-xs text-sm text-colfer-white/60">
             {siteConfig.description}
           </p>

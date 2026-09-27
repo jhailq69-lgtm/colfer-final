@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero";
+import { ImportBanner } from "@/components/home/ImportBanner";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Offers } from "@/components/home/Offers";
@@ -20,6 +21,7 @@ export default async function HomePage() {
   return (
     <main className="flex-1">
       <Hero />
+      <ImportBanner />
       <CategoryGrid />
       <FeaturedProducts products={featuredProducts} />
       <Offers products={discountedProducts} />

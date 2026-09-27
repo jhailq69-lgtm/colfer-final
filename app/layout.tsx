@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: "website",
+    images: [
+      {
+        url: "/images/colfer-banner-importadora.jpg",
+        width: 1254,
+        height: 1254,
+        alt: siteConfig.name,
+      },
+    ],
   },
 };
 
