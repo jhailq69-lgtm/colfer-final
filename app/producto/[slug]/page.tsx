@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, CheckCircle2 } from "lucide-react";
@@ -13,13 +14,16 @@ import { ProductPlaceholder } from "@/components/ui/ProductPlaceholder";
 import { ProductDetailActions } from "@/components/productos/ProductDetailActions";
 import { ProductCard } from "@/components/productos/ProductCard";
 import { productosDemo } from "@/data/productos-demo";
+import { productosReales } from "@/data/productos-reales";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
-  return productosDemo.map((p) => ({ slug: p.slug }));
+  return [...productosReales, ...productosDemo].map((p) => ({
+    slug: p.slug,
+  }));
 }
 
 export async function generateMetadata({
@@ -77,11 +81,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         {/* Imagen */}
-        <div className="relative aspect-square overflow-hidden rounded-xl border border-white/10">
-          <ProductPlaceholder
-            categorySlug={product.categorySlug}
-            className="h-full w-full"
-          />
+        <div className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white">
+          {product.images[0] ? (
+            <Image
+              src={product.images[0]}
+              alt={product.name}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-contain p-4"
+              priority
+            />
+          ) : (
+            <ProductPlaceholder
+              categorySlug={product.categorySlug}
+              className="h-full w-full"
+            />
+          )}
           <div className="absolute left-3 top-3 flex gap-2">
             {product.isDemo && <DemoBadge />}
             {product.discountPercent && (

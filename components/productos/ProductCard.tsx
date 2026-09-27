@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import type { Product } from "@/types";
@@ -13,12 +14,22 @@ export function ProductCard({ product }: { product: Product }) {
     <div className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-colfer-dark transition-colors hover:border-white/20">
       <Link
         href={`/producto/${product.slug}`}
-        className="relative block aspect-[4/3] overflow-hidden"
+        className="relative block aspect-[4/3] overflow-hidden bg-white"
       >
-        <ProductPlaceholder
-          categorySlug={product.categorySlug}
-          className="h-full w-full transition-transform duration-300 group-hover:scale-105"
-        />
+        {product.images[0] ? (
+          <Image
+            src={product.images[0]}
+            alt={product.name}
+            fill
+            sizes="(min-width: 1024px) 25vw, 50vw"
+            className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <ProductPlaceholder
+            categorySlug={product.categorySlug}
+            className="h-full w-full transition-transform duration-300 group-hover:scale-105"
+          />
+        )}
         <div className="absolute left-2 top-2 flex gap-1.5">
           {product.isDemo && <DemoBadge />}
           {product.discountPercent && (

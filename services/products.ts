@@ -1,34 +1,38 @@
 import type { CategorySlug, Product } from "@/types";
 import { productosDemo } from "@/data/productos-demo";
+import { productosReales } from "@/data/productos-reales";
 
 /**
- * Capa de acceso a productos. Hoy lee de datos locales (`data/productos-demo.ts`).
- * En la fase 2, estas funciones se reemplazan por consultas a Supabase
- * sin tener que tocar los componentes que las usan.
+ * Capa de acceso a productos. Hoy lee de datos locales
+ * (`data/productos-reales.ts` con inventario real + `data/productos-demo.ts`
+ * como relleno de demostración). En la fase 2, estas funciones se
+ * reemplazan por consultas a Supabase sin tener que tocar los componentes
+ * que las usan.
  */
+const todosLosProductos: Product[] = [...productosReales, ...productosDemo];
 
 export async function getAllProducts(): Promise<Product[]> {
-  return productosDemo;
+  return todosLosProductos;
 }
 
 export async function getProductBySlug(
   slug: string
 ): Promise<Product | undefined> {
-  return productosDemo.find((p) => p.slug === slug);
+  return todosLosProductos.find((p) => p.slug === slug);
 }
 
 export async function getProductsByCategory(
   categorySlug: CategorySlug
 ): Promise<Product[]> {
-  return productosDemo.filter((p) => p.categorySlug === categorySlug);
+  return todosLosProductos.filter((p) => p.categorySlug === categorySlug);
 }
 
 export async function getFeaturedProducts(limit = 4): Promise<Product[]> {
-  return productosDemo.filter((p) => p.available).slice(0, limit);
+  return todosLosProductos.filter((p) => p.available).slice(0, limit);
 }
 
 export async function getDiscountedProducts(limit = 4): Promise<Product[]> {
-  return productosDemo
+  return todosLosProductos
     .filter((p) => !!p.discountPercent)
     .slice(0, limit);
 }
@@ -47,7 +51,7 @@ export interface ProductFilters {
 export async function filterProducts(
   filters: ProductFilters
 ): Promise<Product[]> {
-  return productosDemo.filter((p) => {
+  return todosLosProductos.filter((p) => {
     if (filters.categorySlug && p.categorySlug !== filters.categorySlug)
       return false;
     if (filters.brand && p.brand !== filters.brand) return false;

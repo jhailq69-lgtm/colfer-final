@@ -48,7 +48,7 @@ export interface Product {
   features: string[];
   compatibleVehicles?: Pick<Vehicle, "brand" | "model" | "year">[];
   images: string[];
-  isDemo: true; // todos los productos actuales son de demostración
+  isDemo?: boolean; // true para productos de demostración; false/ausente para inventario real
 }
 
 export interface Service {

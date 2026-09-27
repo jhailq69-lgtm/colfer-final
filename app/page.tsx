@@ -4,6 +4,7 @@ import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Offers } from "@/components/home/Offers";
 import { FeaturedServices } from "@/components/home/FeaturedServices";
+import { CatalogDownload } from "@/components/home/CatalogDownload";
 import { BrandsStrip } from "@/components/home/BrandsStrip";
 import { TrustSection } from "@/components/home/TrustSection";
 import { ContactSection } from "@/components/home/ContactSection";
@@ -26,6 +27,7 @@ export default async function HomePage() {
       <FeaturedProducts products={featuredProducts} />
       <Offers products={discountedProducts} />
       <FeaturedServices services={featuredServices} />
+      <CatalogDownload />
       <BrandsStrip />
       <TrustSection />
       <ContactSection />

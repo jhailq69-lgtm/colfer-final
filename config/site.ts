@@ -1,9 +1,5 @@
 /**
  * Configuración global del sitio COLFER.
- *
- * IMPORTANTE: WHATSAPP_NUMBER queda como placeholder hasta que
- * proporciones el número oficial de COLFER. Debe ir en formato
- * internacional SIN "+" ni espacios, ej: "59171234567".
  */
 export const siteConfig = {
   name: "COLFER",
@@ -13,15 +9,32 @@ export const siteConfig = {
   url: "https://colfer.example.com", // TODO: reemplazar con el dominio real
   locale: "es-BO",
 
-  // TODO: Reemplazar con el número oficial de WhatsApp de COLFER.
-  // Formato: código de país + número, sin "+", sin espacios, sin guiones.
-  // Ejemplo Bolivia: "59171234567"
-  whatsappNumber: "",
+  // Número oficial de WhatsApp de COLFER (Central Cochabamba).
+  whatsappNumber: "71719941",
 
   contact: {
     email: "contacto@colfer.example.com", // TODO: reemplazar
-    address: "Cochabamba, Bolivia", // TODO: reemplazar con dirección real
+    address: "Av. Aroma #987 esq. Tiahuanaco, Cochabamba, Bolivia",
   },
+
+  // Sucursales adicionales de COLFER.
+  branches: [
+    {
+      name: "Central Cochabamba",
+      address: "Av. Aroma #987 esq. Tiahuanaco",
+      whatsappNumber: "71719941",
+    },
+    {
+      name: "Sucursal 1 Cochabamba",
+      address: "Calle Huáscar y Av. Aroma",
+      whatsappNumber: "71742699",
+    },
+    {
+      name: "Sucursal Santa Cruz",
+      address: "Doble Vía La Guardia esq. Yotaú",
+      whatsappNumber: "68524203",
+    },
+  ],
 
   social: {
     facebook: "", // TODO
