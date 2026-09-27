@@ -1,0 +1,203 @@
+import type { Product } from "@/types";
+
+/**
+ * Productos de DEMOSTRACIÓN. No representan inventario real de COLFER.
+ * Reemplazar con datos reales (o conectar a Supabase) en la fase 2.
+ */
+export const productosDemo: Product[] = [
+  {
+    id: "p-001",
+    slug: "filtro-aceite-roadtek-fa200",
+    name: "Filtro de aceite RoadTek FA-200",
+    categorySlug: "autopartes",
+    brand: "RoadTek",
+    price: 45,
+    previousPrice: 55,
+    discountPercent: 18,
+    available: true,
+    stock: 24,
+    description:
+      "Filtro de aceite de alta eficiencia, diseñado para motores a gasolina de 1.6L a 2.0L. Retiene partículas finas y prolonga la vida del motor.",
+    features: [
+      "Compatible con motores 1.6L - 2.0L",
+      "Filtración de hasta 99% de partículas",
+      "Carcasa metálica resistente a altas presiones",
+    ],
+    compatibleVehicles: [
+      { brand: "Toyota", model: "Corolla", year: 2019 },
+      { brand: "Toyota", model: "Corolla", year: 2020 },
+      { brand: "Nissan", model: "Sentra", year: 2018 },
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-002",
+    slug: "pastillas-freno-durabrake-df450",
+    name: "Pastillas de freno DuraBrake DF-450",
+    categorySlug: "autopartes",
+    brand: "DuraBrake",
+    price: 180,
+    available: true,
+    stock: 12,
+    description:
+      "Juego de pastillas de freno delanteras cerámicas, bajo nivel de ruido y polvo, frenado consistente en condiciones exigentes.",
+    features: [
+      "Compuesto cerámico de baja emisión de polvo",
+      "Juego de 4 unidades (eje delantero)",
+      "Vida útil estimada: 40,000 km",
+    ],
+    compatibleVehicles: [
+      { brand: "Toyota", model: "Hilux", year: 2020 },
+      { brand: "Chevrolet", model: "Onix", year: 2021 },
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-003",
+    slug: "bateria-voltmax-vm70",
+    name: "Batería VoltMax VM-70",
+    categorySlug: "autopartes",
+    brand: "VoltMax",
+    price: 620,
+    available: true,
+    stock: 8,
+    description:
+      "Batería de 70Ah libre de mantenimiento, arranque confiable incluso en climas fríos. Garantía de fábrica de 12 meses.",
+    features: [
+      "70 Ah / 12V",
+      "Libre de mantenimiento",
+      "Garantía de fábrica: 12 meses",
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-004",
+    slug: "pantalla-android-sonicpro-9pulgadas",
+    name: "Pantalla multimedia SonicPro 9\" Android Auto",
+    categorySlug: "multimedia",
+    brand: "SonicPro",
+    price: 890,
+    previousPrice: 1050,
+    discountPercent: 15,
+    available: true,
+    stock: 6,
+    description:
+      "Pantalla multimedia de 9 pulgadas con Android Auto y Apple CarPlay inalámbrico, cámara de retroceso incluida.",
+    features: [
+      "Pantalla táctil IPS de 9\"",
+      "Android Auto y CarPlay inalámbrico",
+      "Incluye cámara de retroceso",
+      "Bluetooth y radio FM/AM",
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-005",
+    slug: "subwoofer-sonicpro-sw12",
+    name: "Subwoofer SonicPro SW-12",
+    categorySlug: "multimedia",
+    brand: "SonicPro",
+    price: 340,
+    available: true,
+    stock: 10,
+    description:
+      "Subwoofer activo de 12 pulgadas con amplificador incorporado, ideal para reforzar graves sin ocupar mucho espacio.",
+    features: [
+      "12 pulgadas, 400W máx.",
+      "Amplificador incorporado",
+      "Control de ganancia y frecuencia de corte",
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-006",
+    slug: "barra-led-clearview-cv20",
+    name: "Barra LED ClearView CV-20",
+    categorySlug: "faroles",
+    brand: "ClearView",
+    price: 260,
+    available: true,
+    stock: 15,
+    description:
+      "Barra de luces LED de 20 pulgadas, ideal para camionetas y todoterreno. Alta resistencia al agua y vibración.",
+    features: [
+      "20 pulgadas, 6000K luz blanca",
+      "Certificación IP68 (resistente al agua)",
+      "Instalación universal",
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-007",
+    slug: "faros-led-clearview-h4",
+    name: "Kit de faros LED ClearView H4",
+    categorySlug: "faroles",
+    brand: "ClearView",
+    price: 210,
+    previousPrice: 250,
+    discountPercent: 16,
+    available: false,
+    stock: 0,
+    description:
+      "Kit de conversión a LED para faros H4, mayor visibilidad nocturna y menor consumo que el halógeno tradicional.",
+    features: [
+      "Base H4, plug and play",
+      "6500K luz blanca",
+      "Vida útil estimada: 30,000 horas",
+    ],
+    compatibleVehicles: [
+      { brand: "Nissan", model: "X-Trail", year: 2017 },
+      { brand: "Suzuki", model: "Vitara", year: 2018 },
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-008",
+    slug: "camara-retroceso-primeguard-cr10",
+    name: "Cámara de retroceso PrimeGuard CR-10",
+    categorySlug: "accesorios",
+    brand: "PrimeGuard",
+    price: 95,
+    available: true,
+    stock: 20,
+    description:
+      "Cámara de retroceso con visión nocturna y guías de estacionamiento en pantalla. Fácil instalación.",
+    features: [
+      "Visión nocturna infrarroja",
+      "Guías de estacionamiento dinámicas",
+      "Resistente al agua (IP67)",
+    ],
+    images: [],
+    isDemo: true,
+  },
+  {
+    id: "p-009",
+    slug: "alfombras-primeguard-3d",
+    name: "Juego de alfombras 3D PrimeGuard",
+    categorySlug: "accesorios",
+    brand: "PrimeGuard",
+    price: 150,
+    available: true,
+    stock: 18,
+    description:
+      "Alfombras a medida tipo 3D, material antideslizante, fáciles de limpiar y con bordes elevados anti-derrames.",
+    features: [
+      "Ajuste 3D a medida",
+      "Material antideslizante",
+      "Bordes elevados anti-derrames",
+    ],
+    compatibleVehicles: [
+      { brand: "Toyota", model: "Corolla", year: 2020 },
+      { brand: "Chevrolet", model: "Sail", year: 2017 },
+    ],
+    images: [],
+    isDemo: true,
+  },
+];

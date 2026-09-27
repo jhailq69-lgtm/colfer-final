@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+
+  /* Paleta COLFER */
+  --color-colfer-black: #0a0a0a;
+  --color-colfer-dark: #1c1c1e;
+  --color-colfer-dark-2: #2c2c2e;
+  --color-colfer-white: #ffffff;
+  --color-colfer-gray: #6b6b70;
+  --color-colfer-accent: #e8452c;
+  --color-colfer-accent-dark: #c8371f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-colfer-black: var(--color-colfer-black);
+  --color-colfer-dark: var(--color-colfer-dark);
+  --color-colfer-dark-2: var(--color-colfer-dark-2);
+  --color-colfer-white: var(--color-colfer-white);
+  --color-colfer-gray: var(--color-colfer-gray);
+  --color-colfer-accent: var(--color-colfer-accent);
+  --color-colfer-accent-dark: var(--color-colfer-accent-dark);
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Rajdhani", "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
